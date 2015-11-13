@@ -127,7 +127,8 @@ namespace SimpleOfficeWorker
 
     private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
     {
-      int selected = checkedListBox1.SelectedIndex;
+
+      int selected = e.Index;
       
       switch (selected)
       {
@@ -190,7 +191,6 @@ namespace SimpleOfficeWorker
             }
             texts[7] = "";
           }
-          texts[7] = texts[7] == "" ? "" : "";
           break;
         case 8:
           texts[8] = texts[8] == "" ? "Кластеризация" : "";
