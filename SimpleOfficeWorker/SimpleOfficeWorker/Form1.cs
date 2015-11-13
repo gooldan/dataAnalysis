@@ -62,9 +62,16 @@ namespace SimpleOfficeWorker
         wordapp = new Word.Application();
         worddoc = wordapp.Documents.Add();
         Word.Range wrange= worddoc.Paragraphs.Last.Range;
+        wrange.Font.Size = 16;
+        wrange.Bold = 1;
+        wrange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
         wrange.Text = reportNameBox.Text + "\n" + nameBox.Text + " " + fathersNameBox.Text + " " + surnameBox.Text+"\n" +dateTimePicker1.Value.ToShortDateString()+"\f";
+        
         worddoc.Paragraphs.Add();
         wrange = worddoc.Paragraphs.Last.Range;
+        wrange.Font.Size = 12;
+        wrange.Bold = 0;
+        wrange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
         wrange.Text = "Описание данных\n Здесь есть текст. Здесь есть текст...\nЗдесь есть текст. Здесь есть текст...Здесь есть текст. Здесь есть текст...\f";
         for (int i = 0; i < 9;++i )
         {
